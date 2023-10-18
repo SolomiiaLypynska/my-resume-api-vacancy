@@ -38,7 +38,7 @@ public class VacancyServiceImpl implements VacancyService {
 
     @Override
     public List<VacancyResponseDto> getWorkExperience(Long employerId, int page) {
-        log.info("Starting get vacancies by employerId {} and page {}", employerId, page);
+        log.info("Starting get vacancies by employerId {} and page {}.", employerId, page);
         Pageable pageable = PageRequest.of(page, 5);
         List<Vacancy> vacancyList = vacancyRepository.findAllByEmployerIdAndActive(pageable, employerId, 1L);
         log.info("Successfully getting vacancies");

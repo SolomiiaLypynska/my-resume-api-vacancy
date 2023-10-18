@@ -8,8 +8,8 @@
         <version>2.6.7</version>
         <relativePath/>
     </parent>
-    <groupId>com.myresume.api.vacanci</groupId>
-    <artifactId>MyResumeApiVacanci</artifactId>
+    <groupId>com.myresume.api.vacancy</groupId>
+    <artifactId>MyResumeApiVacancy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>my-resume-api-vacancy</name>
     <description>Vacancy Microservice</description>
@@ -62,10 +62,10 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-security</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

@@ -1,1 +1,1 @@
-# my-resume-api-vacanci
+# my-resume-api-vacancy

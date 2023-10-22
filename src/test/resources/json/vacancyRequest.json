@@ -1,0 +1,16 @@
+[
+  {
+    "employerId": 3,
+    "companyName": "Apple",
+    "positionTitle": "Java Developer",
+    "requirements": "Java, SQL, Spring Boot",
+    "description": "Apple company"
+  },
+  {
+    "employerId": 3,
+    "companyName": "Apple",
+    "positionTitle": "Senior Java Developer",
+    "requirements": "Java, SQL, Spring Boot, Hibernate",
+    "description": "Apple company"
+  }
+]

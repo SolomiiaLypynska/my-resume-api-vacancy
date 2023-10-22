@@ -35,7 +35,7 @@ public class VacancyController {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.update(id, dto));
     }
 
-    @PutMapping(path = "/{id}")
+    @PutMapping(path = "/deactivate/{id}")
     public ResponseEntity<VacancyResponseDto> deactivate(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.deactivate(id));
     }

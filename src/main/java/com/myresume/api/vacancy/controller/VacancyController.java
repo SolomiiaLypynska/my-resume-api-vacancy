@@ -20,9 +20,8 @@ public class VacancyController {
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<Void> create(@Valid @RequestBody VacancyRequestDto dto) {
-        vacancyService.create(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<VacancyResponseDto> create(@Valid @RequestBody VacancyRequestDto dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(vacancyService.create(dto));
     }
 
     @GetMapping(path = "/user/{userId}/page/{page}", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -37,8 +36,7 @@ public class VacancyController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Void> deactivate(@PathVariable Long id) {
-        vacancyService.deactivate(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    public ResponseEntity<VacancyResponseDto> deactivate(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.deactivate(id));
     }
 }

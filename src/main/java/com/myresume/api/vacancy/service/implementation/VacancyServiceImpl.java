@@ -28,12 +28,13 @@ public class VacancyServiceImpl implements VacancyService {
     private VacancyResponseMapper vacancyResponseMapper;
 
     @Override
-    public void create(VacancyRequestDto dto) {
+    public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
         log.info("Successfully created new Vacancy;");
+        return vacancyResponseMapper.toDto(vacancy);
     }
 
     @Override
@@ -60,11 +61,12 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     @Override
-    public void deactivate(Long id) {
+    public VacancyResponseDto deactivate(Long id) {
         log.info("Started deactivate Vacancy by id: {};", id);
         Vacancy vacancy = vacancyRepository.findById(id).orElseThrow(() -> new NotFoundException("Not found Vacancy by id: " + id));
         vacancy.setActive(0L);
         vacancyRepository.save(vacancy);
         log.info("Successfully deactivate Vacancy;");
+        return vacancyResponseMapper.toDto(vacancy);
     }
 }

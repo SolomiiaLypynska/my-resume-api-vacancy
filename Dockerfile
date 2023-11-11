@@ -14,7 +14,8 @@ RUN mvn dependency:go-offline -B
 
 ### Step 2 - Copy source and build "deployable package"
 COPY src src
-RUN mvn install -DskipTests
+RUN mvn install
+# RUN mvn install -DskipTests
 
 # Unzip
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)

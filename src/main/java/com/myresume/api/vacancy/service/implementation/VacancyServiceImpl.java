@@ -69,4 +69,10 @@ public class VacancyServiceImpl implements VacancyService {
         log.info("Successfully deactivate Vacancy;");
         return vacancyResponseMapper.toDto(vacancy);
     }
+
+    @Override
+    public List<VacancyResponseDto> findAll() {
+        log.info("Starting get all vacancies.");
+        return vacancyResponseMapper.toDto(vacancyRepository.findAll());
+    }
 }

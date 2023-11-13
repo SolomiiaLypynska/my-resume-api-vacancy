@@ -14,4 +14,6 @@ public interface VacancyService {
     VacancyRequestDto update(Long id, VacancyRequestDto dto);
 
     VacancyResponseDto deactivate(Long id);
+
+    List<VacancyResponseDto> findAll();
 }

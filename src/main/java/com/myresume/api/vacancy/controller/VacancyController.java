@@ -39,4 +39,9 @@ public class VacancyController {
     public ResponseEntity<VacancyResponseDto> deactivate(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.deactivate(id));
     }
+
+    @GetMapping(path = "/all")
+    public ResponseEntity<List<VacancyResponseDto>> getAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findAll());
+    }
 }

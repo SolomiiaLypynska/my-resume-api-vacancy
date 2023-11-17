@@ -54,6 +54,9 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setPositionTitle(dto.getPositionTitle());
         vacancy.setRequirements(dto.getRequirements());
         vacancy.setDescription(dto.getDescription());
+        vacancy.setEmploymentType(dto.getEmploymentType());
+        vacancy.setSalary(dto.getSalary());
+        vacancy.setPositionLevel(dto.getPositionLevel());
 
         vacancyRepository.save(vacancy);
         log.info("Successfully update Vacancy;");

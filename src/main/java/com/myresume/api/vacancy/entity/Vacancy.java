@@ -27,8 +27,14 @@ public class Vacancy {
     private String positionTitle;
     @Column(name = "REQUIREMENTS")
     private String requirements;
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", columnDefinition = "CLOB")
     private String description;
+    @Column(name = "EMPLOYMENT_TYPE")
+    private String employmentType;
+    @Column(name = "SALARY")
+    private Long salary;
+    @Column(name = "POSITION_LEVEL")
+    private String positionLevel;
     @Column(name = "ACTIVE", nullable = false, columnDefinition = "NUMBER DEFAULT 1")
     private Long active;
     @Column(name = "CREATED_ON", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

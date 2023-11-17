@@ -3,6 +3,7 @@ package com.myresume.api.vacancy.dto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,4 +23,7 @@ public class VacancyRequestDto {
     @NotNull(message = "Description can not be null")
     @Size(min = 10, message = "Description must be more than 10 characters")
     private String description;
+    private String employmentType;
+    private Long salary;
+    private String positionLevel;
 }

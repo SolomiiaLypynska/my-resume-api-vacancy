@@ -14,6 +14,9 @@ public class VacancyResponseDto {
     private String positionTitle;
     private String requirements;
     private String description;
+    private String employmentType;
+    private Long salary;
+    private String positionLevel;
     private Long active;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;

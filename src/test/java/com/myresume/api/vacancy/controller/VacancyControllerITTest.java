@@ -5,16 +5,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.myresume.api.vacancy.MyResumeApiVacancyApplication;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
@@ -27,11 +27,12 @@ import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringRunner.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@SpringJUnitConfig
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = MyResumeApiVacancyApplication.class)
 @AutoConfigureMockMvc
 @ActiveProfiles(profiles = "test")
-public class VacancyControllerITTest {
+class VacancyControllerITTest {
     private static final String URL = "/api/vacancy";
     private static final String VACANCY_REQUEST_PATH = "src/test/resources/json/vacancyRequest.json";
     private MockMvc mvc;
@@ -39,7 +40,7 @@ public class VacancyControllerITTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    @Before
+    @BeforeAll
     public void setup() {
         this.mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
@@ -47,7 +48,7 @@ public class VacancyControllerITTest {
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
-    public void shouldReturnVacancyByUserAndPage() throws Exception {
+    void shouldReturnVacancyByUserAndPage() throws Exception {
         mvc.perform(get(URL + "/user/{userId}/page/{page}", 3, 0)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -69,7 +70,7 @@ public class VacancyControllerITTest {
 
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
-    public void shouldCreateAndReturnVacancy() throws Exception {
+    void shouldCreateAndReturnVacancy() throws Exception {
         mvc.perform(post(URL)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(extractJson(0)))
@@ -89,7 +90,7 @@ public class VacancyControllerITTest {
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
-    public void shouldUpdateAndReturnVacancy() throws Exception {
+    void shouldUpdateAndReturnVacancy() throws Exception {
         mvc.perform(put(URL + "/{id}", 1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(extractJson(1)))
@@ -108,7 +109,7 @@ public class VacancyControllerITTest {
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
-    public void shouldDeactivateAndReturnVacancy() throws Exception {
+    void shouldDeactivateAndReturnVacancy() throws Exception {
         mvc.perform(put(URL + "/deactivate/{id}", 6)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

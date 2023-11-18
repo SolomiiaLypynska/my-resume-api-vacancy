@@ -4,13 +4,19 @@
     "companyName": "Apple",
     "positionTitle": "Java Developer",
     "requirements": "Java, SQL, Spring Boot",
-    "description": "Apple company"
+    "description": "Apple company",
+    "employmentType": "full-time",
+    "salary":500,
+    "positionLevel": "Junior"
   },
   {
     "employerId": 3,
     "companyName": "Apple",
     "positionTitle": "Senior Java Developer",
     "requirements": "Java, SQL, Spring Boot, Hibernate",
-    "description": "Apple company"
+    "description": "Apple company",
+    "employmentType": "full-time",
+    "salary":1000,
+    "positionLevel": "Middle"
   }
 ]

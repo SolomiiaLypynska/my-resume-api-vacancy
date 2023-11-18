@@ -61,7 +61,10 @@ public class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].description", is(nullValue())))
                 .andExpect(jsonPath("$[1].active", is(1)))
                 .andExpect(jsonPath("$[1].createdOn", is("2023-12-09T10:00:09")))
-                .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")));
+                .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")))
+                .andExpect(jsonPath("$[1].employmentType", is("full")))
+                .andExpect(jsonPath("$[1].salary", is(700)))
+                .andExpect(jsonPath("$[1].positionLevel", is("Middle")));
     }
 
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
@@ -77,7 +80,10 @@ public class VacancyControllerITTest {
                 .andExpect(jsonPath("companyName", is("Apple")))
                 .andExpect(jsonPath("positionTitle", is("Java Developer")))
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot")))
-                .andExpect(jsonPath("description", is("Apple company")));
+                .andExpect(jsonPath("description", is("Apple company")))
+                .andExpect(jsonPath("employmentType", is("full-time")))
+                .andExpect(jsonPath("salary", is(500)))
+                .andExpect(jsonPath("positionLevel", is("Junior")));
     }
 
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
@@ -93,7 +99,10 @@ public class VacancyControllerITTest {
                 .andExpect(jsonPath("companyName", is("Apple")))
                 .andExpect(jsonPath("positionTitle", is("Senior Java Developer")))
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot, Hibernate")))
-                .andExpect(jsonPath("description", is("Apple company")));
+                .andExpect(jsonPath("description", is("Apple company")))
+                .andExpect(jsonPath("employmentType", is("full-time")))
+                .andExpect(jsonPath("salary", is(1000)))
+                .andExpect(jsonPath("positionLevel", is("Middle")));
     }
 
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
@@ -111,7 +120,10 @@ public class VacancyControllerITTest {
                 .andExpect(jsonPath("description", is(nullValue())))
                 .andExpect(jsonPath("active", is(0)))
                 .andExpect(jsonPath("createdOn", is("2023-12-18T10:00:09")))
-                .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")));
+                .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")))
+                .andExpect(jsonPath("employmentType", is("full")))
+                .andExpect(jsonPath("salary", is(700)))
+                .andExpect(jsonPath("positionLevel", is("Middle")));
     }
 
     private String extractJson(int index) throws Exception {

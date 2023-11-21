@@ -45,9 +45,9 @@ class VacancyControllerITTest {
         this.mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
+    @Test
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-    @Test
     void shouldReturnVacancyByUserAndPage() throws Exception {
         mvc.perform(get(URL + "/user/{userId}/page/{page}", 3, 0)
                         .contentType(MediaType.APPLICATION_JSON))
@@ -65,11 +65,14 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")))
                 .andExpect(jsonPath("$[1].employmentType", is("full")))
                 .andExpect(jsonPath("$[1].salary", is(700)))
-                .andExpect(jsonPath("$[1].positionLevel", is("Middle")));
+                .andExpect(jsonPath("$[1].positionLevel", is("Middle")))
+                .andExpect(jsonPath("$[1].workExperience", is(1.5)))
+                .andExpect(jsonPath("$[1].companyType", is("OUTSTAFF")))
+                .andExpect(jsonPath("$[1].englishLevel", is("BEGINNER/ELEMENTARY")));
     }
 
-    @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
+    @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     void shouldCreateAndReturnVacancy() throws Exception {
         mvc.perform(post(URL)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -84,12 +87,15 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("description", is("Apple company")))
                 .andExpect(jsonPath("employmentType", is("full-time")))
                 .andExpect(jsonPath("salary", is(500)))
-                .andExpect(jsonPath("positionLevel", is("Junior")));
+                .andExpect(jsonPath("positionLevel", is("Junior")))
+                .andExpect(jsonPath("workExperience", is(1.5)))
+                .andExpect(jsonPath("companyType", is("OUTSOURCE")))
+                .andExpect(jsonPath("englishLevel", is("PRE-INTERMEDIATE")));
     }
 
+    @Test
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-    @Test
     void shouldUpdateAndReturnVacancy() throws Exception {
         mvc.perform(put(URL + "/{id}", 1)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -103,12 +109,15 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("description", is("Apple company")))
                 .andExpect(jsonPath("employmentType", is("full-time")))
                 .andExpect(jsonPath("salary", is(1000)))
-                .andExpect(jsonPath("positionLevel", is("Middle")));
+                .andExpect(jsonPath("positionLevel", is("Middle")))
+                .andExpect(jsonPath("workExperience", is(1.5)))
+                .andExpect(jsonPath("companyType", is("PRODUCT")))
+                .andExpect(jsonPath("englishLevel", is("PRE-INTERMEDIATE")));
     }
 
+    @Test
     @Sql(scripts = {"classpath:/db/vacancy_insert.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(scripts = {"classpath:/db/vacancy_delete.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-    @Test
     void shouldDeactivateAndReturnVacancy() throws Exception {
         mvc.perform(put(URL + "/deactivate/{id}", 6)
                         .contentType(MediaType.APPLICATION_JSON))
@@ -124,7 +133,10 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")))
                 .andExpect(jsonPath("employmentType", is("full")))
                 .andExpect(jsonPath("salary", is(700)))
-                .andExpect(jsonPath("positionLevel", is("Middle")));
+                .andExpect(jsonPath("positionLevel", is("Middle")))
+                .andExpect(jsonPath("workExperience", is(2.0)))
+                .andExpect(jsonPath("companyType", is("OUTSOURCE")))
+                .andExpect(jsonPath("englishLevel", is("UPPER-INTERMEDIATE")));
     }
 
     private String extractJson(int index) throws Exception {

@@ -6,8 +6,11 @@
     "requirements": "Java, SQL, Spring Boot",
     "description": "Apple company",
     "employmentType": "full-time",
-    "salary":500,
-    "positionLevel": "Junior"
+    "salary": 500,
+    "positionLevel": "Junior",
+    "workExperience": 1.5,
+    "companyType": "OUTSOURCE",
+    "englishLevel": "PRE-INTERMEDIATE"
   },
   {
     "employerId": 3,
@@ -16,7 +19,10 @@
     "requirements": "Java, SQL, Spring Boot, Hibernate",
     "description": "Apple company",
     "employmentType": "full-time",
-    "salary":1000,
-    "positionLevel": "Middle"
+    "salary": 1000,
+    "positionLevel": "Middle",
+    "workExperience": 3,
+    "companyType": "OUTSTAFF",
+    "englishLevel": "UPPER-INTERMEDIATE"
   }
 ]

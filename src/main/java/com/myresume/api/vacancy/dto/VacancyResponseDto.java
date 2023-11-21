@@ -17,6 +17,9 @@ public class VacancyResponseDto {
     private String employmentType;
     private Long salary;
     private String positionLevel;
+    private Double workExperience;
+    private String companyType;
+    private String englishLevel;
     private Long active;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;

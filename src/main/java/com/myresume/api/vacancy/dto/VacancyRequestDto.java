@@ -26,4 +26,7 @@ public class VacancyRequestDto {
     private String employmentType;
     private Long salary;
     private String positionLevel;
+    private Double workExperience;
+    private String companyType;
+    private String englishLevel;
 }

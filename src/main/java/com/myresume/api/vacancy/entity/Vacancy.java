@@ -35,6 +35,12 @@ public class Vacancy {
     private Long salary;
     @Column(name = "POSITION_LEVEL")
     private String positionLevel;
+    @Column(name = "WORK_EXPERIENCE")
+    private Double workExperience;
+    @Column(name = "COMPANY_TYPE")
+    private String companyType;
+    @Column(name = "ENGLISH_LEVEL")
+    private String englishLevel;
     @Column(name = "ACTIVE", nullable = false, columnDefinition = "NUMBER DEFAULT 1")
     private Long active;
     @Column(name = "CREATED_ON", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

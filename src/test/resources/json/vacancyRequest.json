@@ -10,7 +10,7 @@
     "positionLevel": "Junior",
     "workExperience": 1.5,
     "companyType": "OUTSOURCE",
-    "englishLevel": "PRE-INTERMEDIATE"
+    "englishLevel": "preIntermediate"
   },
   {
     "employerId": 3,
@@ -23,6 +23,6 @@
     "positionLevel": "Middle",
     "workExperience": 3,
     "companyType": "OUTSTAFF",
-    "englishLevel": "UPPER-INTERMEDIATE"
+    "englishLevel": "upperIntermediate"
   }
 ]

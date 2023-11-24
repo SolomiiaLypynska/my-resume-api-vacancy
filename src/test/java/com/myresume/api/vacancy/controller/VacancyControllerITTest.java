@@ -68,7 +68,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].positionLevel", is("Middle")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("OUTSTAFF")))
-                .andExpect(jsonPath("$[1].englishLevel", is("BEGINNER/ELEMENTARY")));
+                .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")));
     }
 
     @Test
@@ -90,7 +90,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("Junior")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
-                .andExpect(jsonPath("englishLevel", is("PRE-INTERMEDIATE")));
+                .andExpect(jsonPath("englishLevel", is("preIntermediate")));
     }
 
     @Test
@@ -112,7 +112,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("Middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("PRODUCT")))
-                .andExpect(jsonPath("englishLevel", is("PRE-INTERMEDIATE")));
+                .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")));
     }
 
     @Test
@@ -136,7 +136,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("Middle")))
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
-                .andExpect(jsonPath("englishLevel", is("UPPER-INTERMEDIATE")));
+                .andExpect(jsonPath("englishLevel", is("upperIntermediate")));
     }
 
     private String extractJson(int index) throws Exception {

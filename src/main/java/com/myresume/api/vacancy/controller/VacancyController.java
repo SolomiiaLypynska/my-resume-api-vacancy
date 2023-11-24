@@ -26,7 +26,7 @@ public class VacancyController {
 
     @GetMapping(path = "/user/{userId}/page/{page}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<VacancyResponseDto>> getAllByUserAndPage(@PathVariable Long userId, @PathVariable int page) {
-        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.getWorkExperience(userId, page));
+        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.getVacancies(userId, page));
     }
 
     @PutMapping(path = "/{id}", consumes = {MediaType.APPLICATION_JSON_VALUE},

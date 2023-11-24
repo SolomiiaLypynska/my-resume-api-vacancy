@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.entity;
 
+import com.myresume.api.vacancy.enum_.EnglishLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
@@ -39,8 +40,9 @@ public class Vacancy {
     private Double workExperience;
     @Column(name = "COMPANY_TYPE")
     private String companyType;
+    @Enumerated(EnumType.STRING)
     @Column(name = "ENGLISH_LEVEL")
-    private String englishLevel;
+    private EnglishLevel englishLevel;
     @Column(name = "ACTIVE", nullable = false, columnDefinition = "NUMBER DEFAULT 1")
     private Long active;
     @Column(name = "CREATED_ON", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

@@ -9,7 +9,7 @@ import java.util.List;
 public interface VacancyService {
     VacancyResponseDto create(VacancyRequestDto dto);
 
-    List<VacancyResponseDto> getWorkExperience(Long employerId, int page);
+    List<VacancyResponseDto> getVacancies(Long employerId, int page);
 
     VacancyRequestDto update(Long id, VacancyRequestDto dto);
 

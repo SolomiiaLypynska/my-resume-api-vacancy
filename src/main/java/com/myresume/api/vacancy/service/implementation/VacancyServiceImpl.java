@@ -4,6 +4,7 @@ package com.myresume.api.vacancy.service.implementation;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
 import com.myresume.api.vacancy.dto.VacancyResponseDto;
 import com.myresume.api.vacancy.entity.Vacancy;
+import com.myresume.api.vacancy.enum_.EnglishLevel;
 import com.myresume.api.vacancy.exception.exception_type.NotFoundException;
 import com.myresume.api.vacancy.mapper.VacancyRequestMapper;
 import com.myresume.api.vacancy.mapper.VacancyResponseMapper;
@@ -16,6 +17,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -30,6 +32,7 @@ public class VacancyServiceImpl implements VacancyService {
     @Override
     public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
+        dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByValue(dto.getEnglishLevel())).name());
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -38,7 +41,7 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     @Override
-    public List<VacancyResponseDto> getWorkExperience(Long employerId, int page) {
+    public List<VacancyResponseDto> getVacancies(Long employerId, int page) {
         log.info("Starting get vacancies by employerId {} and page {}.", employerId, page);
         Pageable pageable = PageRequest.of(page, 5);
         List<Vacancy> vacancyList = vacancyRepository.findAllByEmployerIdAndActive(pageable, employerId, 1L);
@@ -57,6 +60,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setEmploymentType(dto.getEmploymentType());
         vacancy.setSalary(dto.getSalary());
         vacancy.setPositionLevel(dto.getPositionLevel());
+        vacancy.setEnglishLevel(EnglishLevel.findByValue(dto.getEnglishLevel()));
 
         vacancyRepository.save(vacancy);
         log.info("Successfully update Vacancy;");

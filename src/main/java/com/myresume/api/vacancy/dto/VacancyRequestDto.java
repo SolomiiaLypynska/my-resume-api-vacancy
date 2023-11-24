@@ -3,7 +3,6 @@ package com.myresume.api.vacancy.dto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -28,5 +27,6 @@ public class VacancyRequestDto {
     private String positionLevel;
     private Double workExperience;
     private String companyType;
+    @NotNull(message = "English Level can not be null")
     private String englishLevel;
 }

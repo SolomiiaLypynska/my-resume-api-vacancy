@@ -9,15 +9,15 @@ public enum EmploymentType {
     FREELANCE("freelance"),
     CONTRACT("contract");
 
-    public final String value;
+    public final String description;
 
-    EmploymentType(String value) {
-        this.value = value;
+    EmploymentType(String description) {
+        this.description = description;
     }
 
-    public static EmploymentType findByValue(String stringValue) {
+    public static EmploymentType findByDescription(String description) {
         return Arrays.stream(EmploymentType.values())
-                .filter(level -> level.value.equalsIgnoreCase(stringValue))
+                .filter(level -> level.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElse(null);
     }

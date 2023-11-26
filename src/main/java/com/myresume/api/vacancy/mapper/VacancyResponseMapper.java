@@ -15,6 +15,6 @@ public interface VacancyResponseMapper extends SuperMapper<Vacancy, VacancyRespo
     VacancyResponseDto toDto(Vacancy vacancy);
 
     default String map(EnglishLevel englishLevel) {
-        return Objects.nonNull(englishLevel) ? englishLevel.value : "";
+        return Objects.nonNull(englishLevel) ? englishLevel.description : "";
     }
 }

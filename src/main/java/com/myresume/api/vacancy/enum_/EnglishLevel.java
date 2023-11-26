@@ -11,15 +11,15 @@ public enum EnglishLevel {
     ADVANCED_FLUENT("advancedOrFluent");
 
 
-    public final String value;
+    public final String description;
 
-    EnglishLevel(String value) {
-        this.value = value;
+    EnglishLevel(String description) {
+        this.description = description;
     }
 
-    public static EnglishLevel findByValue(String stringValue) {
+    public static EnglishLevel findByDescription(String description) {
         return Arrays.stream(EnglishLevel.values())
-                .filter(level -> level.value.equalsIgnoreCase(stringValue))
+                .filter(level -> level.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElse(null);
     }

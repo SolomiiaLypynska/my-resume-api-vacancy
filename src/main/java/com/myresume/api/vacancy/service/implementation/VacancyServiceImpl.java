@@ -32,7 +32,7 @@ public class VacancyServiceImpl implements VacancyService {
     @Override
     public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
-        dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByValue(dto.getEnglishLevel())).name());
+        dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByDescription(dto.getEnglishLevel())).name());
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -60,7 +60,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setEmploymentType(dto.getEmploymentType());
         vacancy.setSalary(dto.getSalary());
         vacancy.setPositionLevel(dto.getPositionLevel());
-        vacancy.setEnglishLevel(EnglishLevel.findByValue(dto.getEnglishLevel()));
+        vacancy.setEnglishLevel(EnglishLevel.findByDescription(dto.getEnglishLevel()));
 
         vacancyRepository.save(vacancy);
         log.info("Successfully update Vacancy;");

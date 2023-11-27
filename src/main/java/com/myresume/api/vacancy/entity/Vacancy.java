@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.entity;
 
+import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,8 +31,9 @@ public class Vacancy {
     private String requirements;
     @Column(name = "DESCRIPTION", columnDefinition = "CLOB")
     private String description;
+    @Enumerated(EnumType.STRING)
     @Column(name = "EMPLOYMENT_TYPE")
-    private String employmentType;
+    private EmploymentType employmentType;
     @Column(name = "SALARY")
     private Long salary;
     @Column(name = "POSITION_LEVEL")

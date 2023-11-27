@@ -22,6 +22,7 @@ public class VacancyRequestDto {
     @NotNull(message = "Description can not be null")
     @Size(min = 10, message = "Description must be more than 10 characters")
     private String description;
+    @NotNull(message = "Employment Type can not be null")
     private String employmentType;
     private Long salary;
     private String positionLevel;

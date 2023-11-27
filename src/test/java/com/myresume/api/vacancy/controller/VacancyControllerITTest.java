@@ -63,7 +63,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].active", is(1)))
                 .andExpect(jsonPath("$[1].createdOn", is("2023-12-09T10:00:09")))
                 .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")))
-                .andExpect(jsonPath("$[1].employmentType", is("full")))
+                .andExpect(jsonPath("$[1].employmentType", is("part-time")))
                 .andExpect(jsonPath("$[1].salary", is(700)))
                 .andExpect(jsonPath("$[1].positionLevel", is("Middle")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
@@ -107,12 +107,12 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionTitle", is("Senior Java Developer")))
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot, Hibernate")))
                 .andExpect(jsonPath("description", is("Apple company")))
-                .andExpect(jsonPath("employmentType", is("full-time")))
+                .andExpect(jsonPath("employmentType", is("freelance")))
                 .andExpect(jsonPath("salary", is(1000)))
                 .andExpect(jsonPath("positionLevel", is("Middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("PRODUCT")))
-                .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")));
+                .andExpect(jsonPath("englishLevel", is("upperIntermediate")));
     }
 
     @Test
@@ -131,7 +131,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("active", is(0)))
                 .andExpect(jsonPath("createdOn", is("2023-12-18T10:00:09")))
                 .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")))
-                .andExpect(jsonPath("employmentType", is("full")))
+                .andExpect(jsonPath("employmentType", is("self-employed")))
                 .andExpect(jsonPath("salary", is(700)))
                 .andExpect(jsonPath("positionLevel", is("Middle")))
                 .andExpect(jsonPath("workExperience", is(2.0)))

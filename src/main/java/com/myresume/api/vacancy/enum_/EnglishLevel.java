@@ -1,8 +1,10 @@
 package com.myresume.api.vacancy.enum_;
 
+import com.myresume.api.vacancy.mapper.Describable;
+
 import java.util.Arrays;
 
-public enum EnglishLevel {
+public enum EnglishLevel implements Describable {
     NO_ENGLISH("noEnglish"),
     BEGINNER_ELEMENTARY("beginnerOrElementary"),
     PRE_INTERMEDIATE("preIntermediate"),
@@ -22,5 +24,10 @@ public enum EnglishLevel {
                 .filter(level -> level.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

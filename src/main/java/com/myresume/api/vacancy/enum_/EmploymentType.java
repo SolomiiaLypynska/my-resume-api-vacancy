@@ -1,8 +1,10 @@
 package com.myresume.api.vacancy.enum_;
 
+import com.myresume.api.vacancy.mapper.Describable;
+
 import java.util.Arrays;
 
-public enum EmploymentType {
+public enum EmploymentType implements Describable {
     FULL_TIME("full-time"),
     PART_TIME("part-time"),
     SELF_EMPLOYED("self-employed"),
@@ -20,5 +22,10 @@ public enum EmploymentType {
                 .filter(level -> level.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

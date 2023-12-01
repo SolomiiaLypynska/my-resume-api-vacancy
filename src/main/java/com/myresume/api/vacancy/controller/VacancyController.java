@@ -35,12 +35,12 @@ public class VacancyController {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.update(id, dto));
     }
 
-    @PutMapping(path = "/deactivate/{id}")
+    @PutMapping(path = "/deactivate/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<VacancyResponseDto> deactivate(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.deactivate(id));
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/all", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<VacancyResponseDto>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findAll());
     }

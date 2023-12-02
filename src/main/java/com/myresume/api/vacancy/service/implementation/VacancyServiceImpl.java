@@ -6,6 +6,7 @@ import com.myresume.api.vacancy.dto.VacancyResponseDto;
 import com.myresume.api.vacancy.entity.Vacancy;
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
+import com.myresume.api.vacancy.enum_.PositionLevel;
 import com.myresume.api.vacancy.exception.exception_type.NotFoundException;
 import com.myresume.api.vacancy.mapper.VacancyRequestMapper;
 import com.myresume.api.vacancy.mapper.VacancyResponseMapper;
@@ -35,6 +36,7 @@ public class VacancyServiceImpl implements VacancyService {
         log.info("Started create new Vacancy: {};", dto);
         dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByDescription(dto.getEnglishLevel())).name());
         dto.setEmploymentType(Objects.requireNonNull(EmploymentType.findByDescription(dto.getEmploymentType())).name());
+        dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -61,7 +63,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setDescription(dto.getDescription());
         vacancy.setEmploymentType(EmploymentType.findByDescription(dto.getEmploymentType()));
         vacancy.setSalary(dto.getSalary());
-        vacancy.setPositionLevel(dto.getPositionLevel());
+        vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
         vacancy.setEnglishLevel(EnglishLevel.findByDescription(dto.getEnglishLevel()));
 
         vacancyRepository.save(vacancy);

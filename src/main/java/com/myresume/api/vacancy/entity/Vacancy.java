@@ -2,6 +2,7 @@ package com.myresume.api.vacancy.entity;
 
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
+import com.myresume.api.vacancy.enum_.PositionLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
@@ -36,8 +37,9 @@ public class Vacancy {
     private EmploymentType employmentType;
     @Column(name = "SALARY")
     private Long salary;
+    @Enumerated(EnumType.STRING)
     @Column(name = "POSITION_LEVEL")
-    private String positionLevel;
+    private PositionLevel positionLevel;
     @Column(name = "WORK_EXPERIENCE")
     private Double workExperience;
     @Column(name = "COMPANY_TYPE")

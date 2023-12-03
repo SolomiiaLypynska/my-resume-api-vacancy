@@ -6,8 +6,8 @@
     "requirements": "Java, SQL, Spring Boot",
     "description": "Apple company",
     "employmentType": "full-time",
-    "salary": 500,
-    "positionLevel": "Junior",
+    "salary": 300,
+    "positionLevel": "trainee",
     "workExperience": 1.5,
     "companyType": "OUTSOURCE",
     "englishLevel": "preIntermediate"
@@ -19,8 +19,8 @@
     "requirements": "Java, SQL, Spring Boot, Hibernate",
     "description": "Apple company",
     "employmentType": "freelance",
-    "salary": 1000,
-    "positionLevel": "Middle",
+    "salary": 2000,
+    "positionLevel": "middle",
     "workExperience": 3,
     "companyType": "OUTSTAFF",
     "englishLevel": "upperIntermediate"

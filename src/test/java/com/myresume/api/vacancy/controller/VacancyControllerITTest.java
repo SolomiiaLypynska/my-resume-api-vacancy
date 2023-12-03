@@ -64,8 +64,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].createdOn", is("2023-12-09T10:00:09")))
                 .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")))
                 .andExpect(jsonPath("$[1].employmentType", is("part-time")))
-                .andExpect(jsonPath("$[1].salary", is(700)))
-                .andExpect(jsonPath("$[1].positionLevel", is("Middle")))
+                .andExpect(jsonPath("$[1].salary", is(4000)))
+                .andExpect(jsonPath("$[1].positionLevel", is("senior")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("OUTSTAFF")))
                 .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")));
@@ -86,8 +86,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot")))
                 .andExpect(jsonPath("description", is("Apple company")))
                 .andExpect(jsonPath("employmentType", is("full-time")))
-                .andExpect(jsonPath("salary", is(500)))
-                .andExpect(jsonPath("positionLevel", is("Junior")))
+                .andExpect(jsonPath("salary", is(300)))
+                .andExpect(jsonPath("positionLevel", is("trainee")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
                 .andExpect(jsonPath("englishLevel", is("preIntermediate")));
@@ -108,8 +108,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot, Hibernate")))
                 .andExpect(jsonPath("description", is("Apple company")))
                 .andExpect(jsonPath("employmentType", is("freelance")))
-                .andExpect(jsonPath("salary", is(1000)))
-                .andExpect(jsonPath("positionLevel", is("Middle")))
+                .andExpect(jsonPath("salary", is(2000)))
+                .andExpect(jsonPath("positionLevel", is("middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("PRODUCT")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")));
@@ -132,8 +132,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("createdOn", is("2023-12-18T10:00:09")))
                 .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")))
                 .andExpect(jsonPath("employmentType", is("self-employed")))
-                .andExpect(jsonPath("salary", is(700)))
-                .andExpect(jsonPath("positionLevel", is("Middle")))
+                .andExpect(jsonPath("salary", is(7000)))
+                .andExpect(jsonPath("positionLevel", is("lead")))
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")));

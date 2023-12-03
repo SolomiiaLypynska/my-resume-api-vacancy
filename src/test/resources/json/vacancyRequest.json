@@ -9,7 +9,7 @@
     "salary": 300,
     "positionLevel": "trainee",
     "workExperience": 1.5,
-    "companyType": "OUTSOURCE",
+    "companyType": "outsource",
     "englishLevel": "preIntermediate"
   },
   {
@@ -22,7 +22,7 @@
     "salary": 2000,
     "positionLevel": "middle",
     "workExperience": 3,
-    "companyType": "OUTSTAFF",
+    "companyType": "outstaff",
     "englishLevel": "upperIntermediate"
   }
 ]

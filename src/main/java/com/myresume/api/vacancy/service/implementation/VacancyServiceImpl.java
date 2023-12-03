@@ -4,6 +4,7 @@ package com.myresume.api.vacancy.service.implementation;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
 import com.myresume.api.vacancy.dto.VacancyResponseDto;
 import com.myresume.api.vacancy.entity.Vacancy;
+import com.myresume.api.vacancy.enum_.CompanyType;
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
 import com.myresume.api.vacancy.enum_.PositionLevel;
@@ -37,6 +38,7 @@ public class VacancyServiceImpl implements VacancyService {
         dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByDescription(dto.getEnglishLevel())).name());
         dto.setEmploymentType(Objects.requireNonNull(EmploymentType.findByDescription(dto.getEmploymentType())).name());
         dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
+        dto.setCompanyType(Objects.requireNonNull(CompanyType.findByDescription(dto.getCompanyType())).name());
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -65,6 +67,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setSalary(dto.getSalary());
         vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
         vacancy.setEnglishLevel(EnglishLevel.findByDescription(dto.getEnglishLevel()));
+        vacancy.setCompanyType(CompanyType.findByDescription(dto.getCompanyType()));
 
         vacancyRepository.save(vacancy);
         log.info("Successfully update Vacancy;");

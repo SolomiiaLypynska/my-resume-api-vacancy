@@ -25,9 +25,10 @@ public class VacancyRequestDto {
     @NotNull(message = "Employment Type can not be null")
     private String employmentType;
     private Long salary;
-    @NotNull(message = "PositionLevel can not be null")
+    @NotNull(message = "Position Level can not be null")
     private String positionLevel;
     private Double workExperience;
+    @NotNull(message = "Company Type can not be null")
     private String companyType;
     @NotNull(message = "English Level can not be null")
     private String englishLevel;

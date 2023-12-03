@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.entity;
 
+import com.myresume.api.vacancy.enum_.CompanyType;
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
 import com.myresume.api.vacancy.enum_.PositionLevel;
@@ -42,8 +43,9 @@ public class Vacancy {
     private PositionLevel positionLevel;
     @Column(name = "WORK_EXPERIENCE")
     private Double workExperience;
+    @Enumerated(EnumType.STRING)
     @Column(name = "COMPANY_TYPE")
-    private String companyType;
+    private CompanyType companyType;
     @Enumerated(EnumType.STRING)
     @Column(name = "ENGLISH_LEVEL")
     private EnglishLevel englishLevel;

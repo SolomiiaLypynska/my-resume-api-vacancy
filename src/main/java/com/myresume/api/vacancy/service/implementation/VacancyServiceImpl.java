@@ -1,6 +1,7 @@
 package com.myresume.api.vacancy.service.implementation;
 
 
+import com.myresume.api.vacancy.dto.VacancyFilterSearchDto;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
 import com.myresume.api.vacancy.dto.VacancyResponseDto;
 import com.myresume.api.vacancy.entity.Vacancy;
@@ -85,7 +86,7 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     @Override
-    public List<VacancyResponseDto> findAll() {
+    public List<VacancyResponseDto> findAll(VacancyFilterSearchDto dto) {
         log.info("Starting get all vacancies.");
         return vacancyResponseMapper.toDto(vacancyRepository.findAll());
     }

@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.controller;
 
+import com.myresume.api.vacancy.dto.VacancyFilterSearchDto;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
 import com.myresume.api.vacancy.dto.VacancyResponseDto;
 import com.myresume.api.vacancy.service.VacancyService;
@@ -40,8 +41,9 @@ public class VacancyController {
         return ResponseEntity.status(HttpStatus.OK).body(vacancyService.deactivate(id));
     }
 
-    @GetMapping(path = "/all", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<List<VacancyResponseDto>> getAll() {
-        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findAll());
+    @PostMapping(path = "/all", consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<List<VacancyResponseDto>> getAll(@RequestBody VacancyFilterSearchDto dto) {
+        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findAll(dto));
     }
 }

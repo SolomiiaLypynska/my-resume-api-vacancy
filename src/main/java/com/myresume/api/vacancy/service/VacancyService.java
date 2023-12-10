@@ -1,6 +1,7 @@
 package com.myresume.api.vacancy.service;
 
 
+import com.myresume.api.vacancy.dto.VacancyFilterSearchDto;
 import com.myresume.api.vacancy.dto.VacancyRequestDto;
 import com.myresume.api.vacancy.dto.VacancyResponseDto;
 
@@ -15,5 +16,5 @@ public interface VacancyService {
 
     VacancyResponseDto deactivate(Long id);
 
-    List<VacancyResponseDto> findAll();
+    List<VacancyResponseDto> findAll(VacancyFilterSearchDto dto);
 }

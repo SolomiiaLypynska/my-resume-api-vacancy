@@ -32,4 +32,7 @@ public class VacancyRequestDto {
     private String companyType;
     @NotNull(message = "English Level can not be null")
     private String englishLevel;
+    @NotNull(message = "Location can not be null")
+    @Size(min = 2, message = "Location must be more than 2 characters")
+    private String location;
 }

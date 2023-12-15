@@ -20,6 +20,7 @@ public class VacancyResponseDto {
     private Double workExperience;
     private String companyType;
     private String englishLevel;
+    private String location;
     private Long active;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;

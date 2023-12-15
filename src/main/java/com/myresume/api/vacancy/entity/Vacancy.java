@@ -1,9 +1,6 @@
 package com.myresume.api.vacancy.entity;
 
-import com.myresume.api.vacancy.enum_.CompanyType;
-import com.myresume.api.vacancy.enum_.EmploymentType;
-import com.myresume.api.vacancy.enum_.EnglishLevel;
-import com.myresume.api.vacancy.enum_.PositionLevel;
+import com.myresume.api.vacancy.enum_.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
@@ -49,6 +46,9 @@ public class Vacancy {
     @Enumerated(EnumType.STRING)
     @Column(name = "ENGLISH_LEVEL")
     private EnglishLevel englishLevel;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "LOCATION")
+    private Location location;
     @Column(name = "ACTIVE", nullable = false, columnDefinition = "NUMBER DEFAULT 1")
     private Long active;
     @Column(name = "CREATED_ON", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

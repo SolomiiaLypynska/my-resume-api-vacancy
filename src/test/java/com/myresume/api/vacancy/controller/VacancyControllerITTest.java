@@ -68,7 +68,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].positionLevel", is("senior")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("outstaff")))
-                .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")));
+                .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")))
+                .andExpect(jsonPath("$[1].location", is("office")));
     }
 
     @Test
@@ -90,7 +91,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("trainee")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("outsource")))
-                .andExpect(jsonPath("englishLevel", is("preIntermediate")));
+                .andExpect(jsonPath("englishLevel", is("preIntermediate")))
+                .andExpect(jsonPath("location", is("remote")));
     }
 
     @Test
@@ -112,7 +114,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("outstaff")))
-                .andExpect(jsonPath("englishLevel", is("upperIntermediate")));
+                .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
+                .andExpect(jsonPath("location", is("office")));
     }
 
     @Test
@@ -136,7 +139,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("lead")))
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("outsource")))
-                .andExpect(jsonPath("englishLevel", is("upperIntermediate")));
+                .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
+                .andExpect(jsonPath("location", is("office")));
     }
 
     private String extractJson(int index) throws Exception {

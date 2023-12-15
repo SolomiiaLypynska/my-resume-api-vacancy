@@ -10,7 +10,8 @@
     "positionLevel": "trainee",
     "workExperience": 1.5,
     "companyType": "outsource",
-    "englishLevel": "preIntermediate"
+    "englishLevel": "preIntermediate",
+    "location": "remote"
   },
   {
     "employerId": 3,
@@ -23,6 +24,7 @@
     "positionLevel": "middle",
     "workExperience": 3,
     "companyType": "outstaff",
-    "englishLevel": "upperIntermediate"
+    "englishLevel": "upperIntermediate",
+    "location": "office"
   }
 ]

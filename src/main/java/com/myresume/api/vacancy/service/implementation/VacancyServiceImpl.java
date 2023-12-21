@@ -61,6 +61,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setCompanyName(dto.getCompanyName());
         vacancy.setPositionTitle(dto.getPositionTitle());
         vacancy.setRequirements(dto.getRequirements());
+        vacancy.setToolAndTechnology(dto.getToolAndTechnology());
         vacancy.setDescription(dto.getDescription());
         vacancy.setEmploymentType(EmploymentType.findByDescription(dto.getEmploymentType()));
         vacancy.setSalary(dto.getSalary());

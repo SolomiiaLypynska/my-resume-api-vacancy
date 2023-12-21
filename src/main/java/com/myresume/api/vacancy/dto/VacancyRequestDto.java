@@ -19,6 +19,9 @@ public class VacancyRequestDto {
     @NotNull(message = "Requirements can not be null")
     @Size(min = 10, message = "Requirements must be more than 10 characters")
     private String requirements;
+    @NotNull(message = "ToolAndTechnology can not be null")
+    @Size(min = 2, message = "ToolAndTechnology must be more than 2 characters")
+    private String toolAndTechnology;
     @NotNull(message = "Description can not be null")
     @Size(min = 10, message = "Description must be more than 10 characters")
     private String description;

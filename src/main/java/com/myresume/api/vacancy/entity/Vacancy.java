@@ -28,6 +28,8 @@ public class Vacancy {
     private String positionTitle;
     @Column(name = "REQUIREMENTS")
     private String requirements;
+    @Column(name = "TOOL_AND_TECHNOLOGY")
+    private String toolAndTechnology;
     @Column(name = "DESCRIPTION", columnDefinition = "CLOB")
     private String description;
     @Enumerated(EnumType.STRING)

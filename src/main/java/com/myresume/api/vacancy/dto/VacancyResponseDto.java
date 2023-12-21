@@ -13,6 +13,7 @@ public class VacancyResponseDto {
     private String companyName;
     private String positionTitle;
     private String requirements;
+    private String toolAndTechnology;
     private String description;
     private String employmentType;
     private Long salary;

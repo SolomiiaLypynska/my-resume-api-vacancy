@@ -86,7 +86,7 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     @Override
-    public List<VacancyResponseDto> findJobs(VacancyFilterSearchDto dto) {
+    public List<VacancyResponseDto> findAllJobsByFilters(VacancyFilterSearchDto dto) {
         log.info("Starting get all vacancies by filters {}.", dto);
         CompanyType companyType = CompanyType.findByDescription(dto.getCompanyType());
         EmploymentType employmentType = EmploymentType.findByDescription(dto.getEmploymentType());

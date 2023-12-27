@@ -86,8 +86,13 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     @Override
-    public List<VacancyResponseDto> findAll(VacancyFilterSearchDto dto) {
-        log.info("Starting get all vacancies.");
-        return vacancyResponseMapper.toDto(vacancyRepository.findAll());
+    public List<VacancyResponseDto> findJobs(VacancyFilterSearchDto dto) {
+        log.info("Starting get all vacancies by filters {}.", dto);
+        CompanyType companyType = CompanyType.findByDescription(dto.getCompanyType());
+        EmploymentType employmentType = EmploymentType.findByDescription(dto.getEmploymentType());
+        EnglishLevel englishLevel = EnglishLevel.findByDescription(dto.getEnglishLevel());
+        PositionLevel positionLevel = PositionLevel.findByDescription(dto.getPositionLevel());
+        return vacancyResponseMapper.toDto(vacancyRepository.findAllByFilters(dto.getPosition(),
+                dto.getSalary(), companyType, employmentType, englishLevel, positionLevel));
     }
 }

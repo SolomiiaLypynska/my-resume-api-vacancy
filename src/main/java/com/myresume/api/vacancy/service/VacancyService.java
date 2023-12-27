@@ -16,5 +16,5 @@ public interface VacancyService {
 
     VacancyResponseDto deactivate(Long id);
 
-    List<VacancyResponseDto> findAll(VacancyFilterSearchDto dto);
+    List<VacancyResponseDto> findJobs(VacancyFilterSearchDto dto);
 }

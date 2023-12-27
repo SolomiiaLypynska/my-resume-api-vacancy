@@ -44,6 +44,6 @@ public class VacancyController {
     @PostMapping(path = "/all", consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<VacancyResponseDto>> getAll(@RequestBody VacancyFilterSearchDto dto) {
-        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findAll(dto));
+        return ResponseEntity.status(HttpStatus.OK).body(vacancyService.findJobs(dto));
     }
 }

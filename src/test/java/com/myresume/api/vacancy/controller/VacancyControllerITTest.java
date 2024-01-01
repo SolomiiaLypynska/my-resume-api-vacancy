@@ -69,7 +69,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("outstaff")))
                 .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")))
-                .andExpect(jsonPath("$[1].location", is("office")));
+                .andExpect(jsonPath("$[1].location", is("office")))
+                .andExpect(jsonPath("$[1].toolAndTechnology", is("React.js, antd, JavaScript, HTML, CSS")));
     }
 
     @Test
@@ -92,7 +93,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("outsource")))
                 .andExpect(jsonPath("englishLevel", is("preIntermediate")))
-                .andExpect(jsonPath("location", is("remote")));
+                .andExpect(jsonPath("location", is("remote")))
+                .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring")));
     }
 
     @Test
@@ -115,7 +117,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("outstaff")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
-                .andExpect(jsonPath("location", is("office")));
+                .andExpect(jsonPath("location", is("office")))
+                .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring, Hibernate, AWS")));;
     }
 
     @Test
@@ -140,7 +143,8 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("outsource")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
-                .andExpect(jsonPath("location", is("office")));
+                .andExpect(jsonPath("location", is("office")))
+                .andExpect(jsonPath("toolAndTechnology", is("Docker, AWS, EC2, S3")));;
     }
 
     private String extractJson(int index) throws Exception {

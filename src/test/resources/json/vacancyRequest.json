@@ -11,7 +11,8 @@
     "workExperience": 1.5,
     "companyType": "outsource",
     "englishLevel": "preIntermediate",
-    "location": "remote"
+    "location": "remote",
+    "toolAndTechnology": "Java, SQL, Spring"
   },
   {
     "employerId": 3,
@@ -25,6 +26,7 @@
     "workExperience": 3,
     "companyType": "outstaff",
     "englishLevel": "upperIntermediate",
-    "location": "office"
+    "location": "office",
+    "toolAndTechnology": "Java, SQL, Spring, Hibernate, AWS"
   }
 ]

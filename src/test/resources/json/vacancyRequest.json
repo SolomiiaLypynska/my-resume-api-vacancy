@@ -9,7 +9,7 @@
     "salary": 300,
     "positionLevel": "trainee",
     "workExperience": 1.5,
-    "companyType": "outsource",
+    "companyType": "OUTSOURCE",
     "englishLevel": "preIntermediate",
     "location": "remote",
     "toolAndTechnology": "Java, SQL, Spring"
@@ -24,7 +24,7 @@
     "salary": 2000,
     "positionLevel": "middle",
     "workExperience": 3,
-    "companyType": "outstaff",
+    "companyType": "OUTSTAFF",
     "englishLevel": "upperIntermediate",
     "location": "office",
     "toolAndTechnology": "Java, SQL, Spring, Hibernate, AWS"

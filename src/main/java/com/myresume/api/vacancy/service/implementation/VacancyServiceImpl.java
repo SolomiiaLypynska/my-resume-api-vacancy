@@ -35,7 +35,6 @@ public class VacancyServiceImpl implements VacancyService {
         log.info("Started create new Vacancy: {};", dto);
         dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByDescription(dto.getEnglishLevel())).name());
         dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
-        dto.setCompanyType(Objects.requireNonNull(CompanyType.findByDescription(dto.getCompanyType())).name());
         dto.setLocation(Objects.requireNonNull(Location.findByDescription(dto.getLocation()).name()));
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
@@ -66,7 +65,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setSalary(dto.getSalary());
         vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
         vacancy.setEnglishLevel(EnglishLevel.findByDescription(dto.getEnglishLevel()));
-        vacancy.setCompanyType(CompanyType.findByDescription(dto.getCompanyType()));
+        vacancy.setCompanyType(dto.getCompanyType());
         vacancy.setLocation(Location.findByDescription(dto.getLocation()));
 
         vacancyRepository.save(vacancy);
@@ -87,7 +86,7 @@ public class VacancyServiceImpl implements VacancyService {
     @Override
     public List<VacancyResponseDto> findAllJobsByFilters(VacancyFilterSearchDto dto) {
         log.info("Starting get all vacancies by filters {}.", dto);
-        CompanyType companyType = CompanyType.findByDescription(dto.getCompanyType());
+        CompanyType companyType = dto.getCompanyType();
         EmploymentType employmentType = dto.getEmploymentType();
         EnglishLevel englishLevel = EnglishLevel.findByDescription(dto.getEnglishLevel());
         PositionLevel positionLevel = PositionLevel.findByDescription(dto.getPositionLevel());

@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.dto;
 
+import com.myresume.api.vacancy.enum_.CompanyType;
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,7 +34,7 @@ public class VacancyRequestDto {
     private String positionLevel;
     private Double workExperience;
     @NotNull(message = "Company Type can not be null")
-    private String companyType;
+    private CompanyType companyType;
     @NotNull(message = "English Level can not be null")
     private String englishLevel;
     @NotNull(message = "Location can not be null")

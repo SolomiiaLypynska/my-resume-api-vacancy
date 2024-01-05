@@ -63,7 +63,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].active", is(1)))
                 .andExpect(jsonPath("$[1].createdOn", is("2023-12-09T10:00:09")))
                 .andExpect(jsonPath("$[1].updatedOn", is("2023-12-15T10:00:09")))
-                .andExpect(jsonPath("$[1].employmentType", is("part-time")))
+                .andExpect(jsonPath("$[1].employmentType", is("PART_TIME")))
                 .andExpect(jsonPath("$[1].salary", is(4000)))
                 .andExpect(jsonPath("$[1].positionLevel", is("senior")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
@@ -87,7 +87,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionTitle", is("Java Developer")))
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot")))
                 .andExpect(jsonPath("description", is("Apple company")))
-                .andExpect(jsonPath("employmentType", is("full-time")))
+                .andExpect(jsonPath("employmentType", is("FULL_TIME")))
                 .andExpect(jsonPath("salary", is(300)))
                 .andExpect(jsonPath("positionLevel", is("trainee")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
@@ -111,14 +111,15 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionTitle", is("Senior Java Developer")))
                 .andExpect(jsonPath("requirements", is("Java, SQL, Spring Boot, Hibernate")))
                 .andExpect(jsonPath("description", is("Apple company")))
-                .andExpect(jsonPath("employmentType", is("freelance")))
+                .andExpect(jsonPath("employmentType", is("FREELANCE")))
                 .andExpect(jsonPath("salary", is(2000)))
                 .andExpect(jsonPath("positionLevel", is("middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("outstaff")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
                 .andExpect(jsonPath("location", is("office")))
-                .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring, Hibernate, AWS")));;
+                .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring, Hibernate, AWS")));
+        ;
     }
 
     @Test
@@ -137,14 +138,15 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("active", is(0)))
                 .andExpect(jsonPath("createdOn", is("2023-12-18T10:00:09")))
                 .andExpect(jsonPath("updatedOn", is("2023-12-15T10:00:09")))
-                .andExpect(jsonPath("employmentType", is("self-employed")))
+                .andExpect(jsonPath("employmentType", is("SELF_EMPLOYED")))
                 .andExpect(jsonPath("salary", is(7000)))
                 .andExpect(jsonPath("positionLevel", is("lead")))
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("outsource")))
                 .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
                 .andExpect(jsonPath("location", is("office")))
-                .andExpect(jsonPath("toolAndTechnology", is("Docker, AWS, EC2, S3")));;
+                .andExpect(jsonPath("toolAndTechnology", is("Docker, AWS, EC2, S3")));
+        ;
     }
 
     private String extractJson(int index) throws Exception {

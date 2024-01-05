@@ -1,5 +1,6 @@
 package com.myresume.api.vacancy.dto;
 
+import com.myresume.api.vacancy.enum_.EmploymentType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,7 +27,7 @@ public class VacancyRequestDto {
     @Size(min = 10, message = "Description must be more than 10 characters")
     private String description;
     @NotNull(message = "Employment Type can not be null")
-    private String employmentType;
+    private EmploymentType employmentType;
     private Long salary;
     @NotNull(message = "Position Level can not be null")
     private String positionLevel;

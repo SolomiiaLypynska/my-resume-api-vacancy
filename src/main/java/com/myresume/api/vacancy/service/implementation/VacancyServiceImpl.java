@@ -34,7 +34,6 @@ public class VacancyServiceImpl implements VacancyService {
     public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
         dto.setEnglishLevel(Objects.requireNonNull(EnglishLevel.findByDescription(dto.getEnglishLevel())).name());
-        dto.setEmploymentType(Objects.requireNonNull(EmploymentType.findByDescription(dto.getEmploymentType())).name());
         dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
         dto.setCompanyType(Objects.requireNonNull(CompanyType.findByDescription(dto.getCompanyType())).name());
         dto.setLocation(Objects.requireNonNull(Location.findByDescription(dto.getLocation()).name()));
@@ -63,7 +62,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setRequirements(dto.getRequirements());
         vacancy.setToolAndTechnology(dto.getToolAndTechnology());
         vacancy.setDescription(dto.getDescription());
-        vacancy.setEmploymentType(EmploymentType.findByDescription(dto.getEmploymentType()));
+        vacancy.setEmploymentType(dto.getEmploymentType());
         vacancy.setSalary(dto.getSalary());
         vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
         vacancy.setEnglishLevel(EnglishLevel.findByDescription(dto.getEnglishLevel()));
@@ -89,7 +88,7 @@ public class VacancyServiceImpl implements VacancyService {
     public List<VacancyResponseDto> findAllJobsByFilters(VacancyFilterSearchDto dto) {
         log.info("Starting get all vacancies by filters {}.", dto);
         CompanyType companyType = CompanyType.findByDescription(dto.getCompanyType());
-        EmploymentType employmentType = EmploymentType.findByDescription(dto.getEmploymentType());
+        EmploymentType employmentType = dto.getEmploymentType();
         EnglishLevel englishLevel = EnglishLevel.findByDescription(dto.getEnglishLevel());
         PositionLevel positionLevel = PositionLevel.findByDescription(dto.getPositionLevel());
         return vacancyResponseMapper.toDto(vacancyRepository.findAllByFilters(dto.getPosition(),

@@ -3,6 +3,7 @@ package com.myresume.api.vacancy.dto;
 import com.myresume.api.vacancy.enum_.CompanyType;
 import com.myresume.api.vacancy.enum_.EmploymentType;
 import com.myresume.api.vacancy.enum_.EnglishLevel;
+import com.myresume.api.vacancy.enum_.PositionLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,5 +15,5 @@ public class VacancyFilterSearchDto {
     private EmploymentType employmentType;
     private CompanyType companyType;
     private EnglishLevel englishLevel;
-    private String positionLevel;
+    private PositionLevel positionLevel;
 }

@@ -33,7 +33,6 @@ public class VacancyServiceImpl implements VacancyService {
     @Override
     public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
-        dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -61,7 +60,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setDescription(dto.getDescription());
         vacancy.setEmploymentType(dto.getEmploymentType());
         vacancy.setSalary(dto.getSalary());
-        vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
+        vacancy.setPositionLevel(dto.getPositionLevel());
         vacancy.setEnglishLevel(dto.getEnglishLevel());
         vacancy.setCompanyType(dto.getCompanyType());
         vacancy.setLocation(dto.getLocation());
@@ -87,7 +86,7 @@ public class VacancyServiceImpl implements VacancyService {
         CompanyType companyType = dto.getCompanyType();
         EmploymentType employmentType = dto.getEmploymentType();
         EnglishLevel englishLevel = dto.getEnglishLevel();
-        PositionLevel positionLevel = PositionLevel.findByDescription(dto.getPositionLevel());
+        PositionLevel positionLevel = dto.getPositionLevel();
         return vacancyResponseMapper.toDto(vacancyRepository.findAllByFilters(dto.getPosition(),
                 dto.getSalary(), companyType, employmentType, englishLevel, positionLevel));
     }

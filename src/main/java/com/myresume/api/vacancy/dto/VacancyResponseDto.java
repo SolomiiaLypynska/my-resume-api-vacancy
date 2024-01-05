@@ -1,9 +1,6 @@
 package com.myresume.api.vacancy.dto;
 
-import com.myresume.api.vacancy.enum_.CompanyType;
-import com.myresume.api.vacancy.enum_.EmploymentType;
-import com.myresume.api.vacancy.enum_.EnglishLevel;
-import com.myresume.api.vacancy.enum_.Location;
+import com.myresume.api.vacancy.enum_.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,7 +18,7 @@ public class VacancyResponseDto {
     private String description;
     private EmploymentType employmentType;
     private Long salary;
-    private String positionLevel;
+    private PositionLevel positionLevel;
     private Double workExperience;
     private CompanyType companyType;
     private EnglishLevel englishLevel;

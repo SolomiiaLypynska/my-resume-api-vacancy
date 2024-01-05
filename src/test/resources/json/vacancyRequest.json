@@ -10,7 +10,7 @@
     "positionLevel": "trainee",
     "workExperience": 1.5,
     "companyType": "OUTSOURCE",
-    "englishLevel": "preIntermediate",
+    "englishLevel": "PRE_INTERMEDIATE",
     "location": "remote",
     "toolAndTechnology": "Java, SQL, Spring"
   },
@@ -25,7 +25,7 @@
     "positionLevel": "middle",
     "workExperience": 3,
     "companyType": "OUTSTAFF",
-    "englishLevel": "upperIntermediate",
+    "englishLevel": "UPPER_INTERMEDIATE",
     "location": "office",
     "toolAndTechnology": "Java, SQL, Spring, Hibernate, AWS"
   }

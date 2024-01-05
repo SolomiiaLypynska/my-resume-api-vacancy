@@ -68,7 +68,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].positionLevel", is("senior")))
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("OUTSTAFF")))
-                .andExpect(jsonPath("$[1].englishLevel", is("beginnerOrElementary")))
+                .andExpect(jsonPath("$[1].englishLevel", is("BEGINNER_ELEMENTARY")))
                 .andExpect(jsonPath("$[1].location", is("office")))
                 .andExpect(jsonPath("$[1].toolAndTechnology", is("React.js, antd, JavaScript, HTML, CSS")));
     }
@@ -92,7 +92,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("trainee")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
-                .andExpect(jsonPath("englishLevel", is("preIntermediate")))
+                .andExpect(jsonPath("englishLevel", is("PRE_INTERMEDIATE")))
                 .andExpect(jsonPath("location", is("remote")))
                 .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring")));
     }
@@ -116,7 +116,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("middle")))
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSTAFF")))
-                .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
+                .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")))
                 .andExpect(jsonPath("location", is("office")))
                 .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring, Hibernate, AWS")));
         ;
@@ -143,7 +143,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("positionLevel", is("lead")))
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
-                .andExpect(jsonPath("englishLevel", is("upperIntermediate")))
+                .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")))
                 .andExpect(jsonPath("location", is("office")))
                 .andExpect(jsonPath("toolAndTechnology", is("Docker, AWS, EC2, S3")));
         ;

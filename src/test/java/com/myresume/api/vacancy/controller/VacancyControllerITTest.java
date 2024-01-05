@@ -69,7 +69,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("$[1].workExperience", is(1.5)))
                 .andExpect(jsonPath("$[1].companyType", is("OUTSTAFF")))
                 .andExpect(jsonPath("$[1].englishLevel", is("BEGINNER_ELEMENTARY")))
-                .andExpect(jsonPath("$[1].location", is("office")))
+                .andExpect(jsonPath("$[1].location", is("OFFICE")))
                 .andExpect(jsonPath("$[1].toolAndTechnology", is("React.js, antd, JavaScript, HTML, CSS")));
     }
 
@@ -93,7 +93,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
                 .andExpect(jsonPath("englishLevel", is("PRE_INTERMEDIATE")))
-                .andExpect(jsonPath("location", is("remote")))
+                .andExpect(jsonPath("location", is("REMOTE")))
                 .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring")));
     }
 
@@ -117,7 +117,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(1.5)))
                 .andExpect(jsonPath("companyType", is("OUTSTAFF")))
                 .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")))
-                .andExpect(jsonPath("location", is("office")))
+                .andExpect(jsonPath("location", is("OFFICE")))
                 .andExpect(jsonPath("toolAndTechnology", is("Java, SQL, Spring, Hibernate, AWS")));
         ;
     }
@@ -144,7 +144,7 @@ class VacancyControllerITTest {
                 .andExpect(jsonPath("workExperience", is(2.0)))
                 .andExpect(jsonPath("companyType", is("OUTSOURCE")))
                 .andExpect(jsonPath("englishLevel", is("UPPER_INTERMEDIATE")))
-                .andExpect(jsonPath("location", is("office")))
+                .andExpect(jsonPath("location", is("OFFICE")))
                 .andExpect(jsonPath("toolAndTechnology", is("Docker, AWS, EC2, S3")));
         ;
     }

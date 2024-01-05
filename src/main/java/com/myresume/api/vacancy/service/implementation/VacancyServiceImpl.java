@@ -34,7 +34,6 @@ public class VacancyServiceImpl implements VacancyService {
     public VacancyResponseDto create(VacancyRequestDto dto) {
         log.info("Started create new Vacancy: {};", dto);
         dto.setPositionLevel(Objects.requireNonNull(PositionLevel.findByDescription(dto.getPositionLevel())).name());
-        dto.setLocation(Objects.requireNonNull(Location.findByDescription(dto.getLocation()).name()));
         Vacancy vacancy = vacancyRequestMapper.toEntity(dto);
         vacancy.setEmployerId(dto.getEmployerId());
         vacancyRepository.save(vacancy);
@@ -65,7 +64,7 @@ public class VacancyServiceImpl implements VacancyService {
         vacancy.setPositionLevel(PositionLevel.findByDescription(dto.getPositionLevel()));
         vacancy.setEnglishLevel(dto.getEnglishLevel());
         vacancy.setCompanyType(dto.getCompanyType());
-        vacancy.setLocation(Location.findByDescription(dto.getLocation()));
+        vacancy.setLocation(dto.getLocation());
 
         vacancyRepository.save(vacancy);
         log.info("Successfully update Vacancy;");
